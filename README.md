@@ -5,6 +5,9 @@ Saudi Arabia Fitness app
 https://www.figma.com/file/Hd8cf6SoR6WStqnbGfLmhK/Untitled?type=design&node-id=0-1
 
 # Team members
-main programmer and developer - rezneac
-design - xxoda
-server part - junkofuruto
+Main programmer and developer - rezneac
+
+Design - xxoda
+
+Server part - junkofuruto
+

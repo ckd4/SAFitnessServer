@@ -230,9 +230,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\safitness\\source\\server\\Server.Application.API\\Server.Application.API.csproj",
-      "projectName": "Server.Application.API",
-      "projectPath": "D:\\Projects\\safitness\\source\\server\\Server.Application.API\\Server.Application.API.csproj",
+      "projectUniqueName": "D:\\Projects\\safitness\\source\\server\\Server.Application.API\\Server.Presentation.API.csproj",
+      "projectName": "Server.Presentation.API",
+      "projectPath": "D:\\Projects\\safitness\\source\\server\\Server.Application.API\\Server.Presentation.API.csproj",
       "packagesPath": "C:\\Users\\fumobomber\\.nuget\\packages\\",
       "outputPath": "D:\\Projects\\safitness\\source\\server\\Server.Application.API\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D+7KYopTHDs8BBK7BEzZSGpI6UVDQF2B+ZSGRNkJHZyKPFjya1M48xoSybZB3WcCy3BZMd6kdZCXyqmu+zg8dw==",
+  "dgSpecHash": "zcmlewy5b/NHaNjlJGt51Vh9trn8lWL1MahmgFjKdX3TeKloaNi5ZMrZl03lfk7NSKSTGlP60ORucQ5kTJusyA==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\safitness\\source\\server\\Server.Application.API\\Server.Application.API.csproj",
+  "projectFilePath": "D:\\Projects\\safitness\\source\\server\\Server.Application.API\\Server.Presentation.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fumobomber\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\fumobomber\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

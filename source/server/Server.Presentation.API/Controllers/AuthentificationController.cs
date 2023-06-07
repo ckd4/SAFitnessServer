@@ -10,11 +10,11 @@ namespace Server.Presentation.API.Controllers
         {
             // TODO:
             // * implement registration through contracts (idk what arabic people use for auth):
-            //   * UserRegistrationResponse (holds id, token and UserRegistrationRequest data)
-            //   * UserRegistrationRequest (holds password, email etc.)
+            //   * RegistrationResponse (holds id, token RegistrationRequest data)
+            //   * RegistrationRequest (holds password, email etc.)
 
             // RETURNS:
-            // * 201 CREATED: user registered, UserRegistrationResponse
+            // * 201 CREATED: user registered, RegistrationResponse
             // * 400 BAD REQUEST: invalid request data
             // * 409 CONFLICT: there is already user with this data
             // * 502 BAD GATEWAY: server request error
@@ -28,11 +28,11 @@ namespace Server.Presentation.API.Controllers
         {
             // TODO:
             // * implement login through contracts:
-            //   * UserRegistrationResponse (holds id, token and UserRegistrationRequest data)
-            //   * UserRegistrationRequest (holds auth data)
+            //   * LoginResponse (holds id, token and LoginRequest data)
+            //   * LoginRequest (holds auth data)
 
             // RETURNS:
-            // * 200 OK: login success, UserRegistrationResponse
+            // * 200 OK: login success, LoginResponse
             // * 404 NOT FOUND: invalid request data
             // * 502 BAD GATEWAY: server request error
             // * 500 INTERNAL SERVER ERROR: unhadled server error

@@ -5,7 +5,6 @@ namespace Server.Presentation.API.Controllers
     [Route("api/auth")]
     public class AuthentificationController : Controller
     {
-        [RequireHttps]
         [HttpGet("register")]
         public async Task<IActionResult> Register()
         {
@@ -16,5 +15,17 @@ namespace Server.Presentation.API.Controllers
 
             return await Task.Run(() => Ok());
         }
+
+        [HttpGet("login")]
+        public async Task<IActionResult> Login()
+        {
+            // TODO:
+            // * implement login through contracts:
+            //   * UserRegistrationResponse (holds something similar to UserRegistrationResponse)
+            //   * UserRegistrationRequest (holds auth data)
+
+            return await Task.Run(() => Ok());
+        }
     }
 }
+ 

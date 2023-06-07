@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace Server.Application.API
 {
     public class Program
@@ -6,6 +8,11 @@ namespace Server.Application.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.Configure<MvcOptions>(
+                options =>
+                {
+                    options.Filters.Add(new RequireHttpsAttribute());
+                });
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

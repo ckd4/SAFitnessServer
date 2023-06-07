@@ -5,7 +5,7 @@ namespace Server.Presentation.API.Controllers
     [Route("api/auth")]
     public class AuthentificationController : Controller
     {
-        [HttpGet("register")]
+        [HttpPost("register")]
         public async Task<IActionResult> Register()
         {
             // TODO:
@@ -13,10 +13,17 @@ namespace Server.Presentation.API.Controllers
             //   * UserRegistrationResponse (holds id, token and UserRegistrationRequest data)
             //   * UserRegistrationRequest (holds password, email etc.)
 
+            // RETURNS:
+            // * 201 CREATED: user registered, UserRegistrationResponse
+            // * 400 BAD REQUEST: invalid request data
+            // * 409 CONFLICT: there is already user with this data
+            // * 502 BAD GATEWAY: server request error
+            // * 500 INTERNAL SERVER ERROR: unhadled server error
+
             return await Task.Run(() => Ok());
         }
 
-        [HttpGet("login")]
+        [HttpPost("login")]
         public async Task<IActionResult> Login()
         {
             // TODO:
@@ -28,4 +35,3 @@ namespace Server.Presentation.API.Controllers
         }
     }
 }
- 

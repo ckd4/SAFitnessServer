@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Server.Core.Servicing\Server.Core.Application.csproj" />
+  </ItemGroup>
+
 </Project>

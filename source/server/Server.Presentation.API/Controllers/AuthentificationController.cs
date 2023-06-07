@@ -31,6 +31,12 @@ namespace Server.Presentation.API.Controllers
             //   * UserRegistrationResponse (holds something similar to UserRegistrationResponse)
             //   * UserRegistrationRequest (holds auth data)
 
+            // RETURNS:
+            // * 200 OK: login success, UserRegistrationResponse
+            // * 404 NOT FOUND: invalid request data
+            // * 502 BAD GATEWAY: server request error
+            // * 500 INTERNAL SERVER ERROR: unhadled server error
+
             return await Task.Run(() => Ok());
         }
     }

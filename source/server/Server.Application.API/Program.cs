@@ -19,7 +19,6 @@ namespace Server.Application.API
             }
 
             app.UseHttpsRedirection();
-            app.UseAuthorization();
             app.MapControllers();
             app.Run();
         }

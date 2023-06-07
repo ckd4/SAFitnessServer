@@ -28,7 +28,7 @@ namespace Server.Presentation.API.Controllers
         {
             // TODO:
             // * implement login through contracts:
-            //   * UserRegistrationResponse (holds something similar to UserRegistrationResponse)
+            //   * UserRegistrationResponse (holds id, token and UserRegistrationRequest data)
             //   * UserRegistrationRequest (holds auth data)
 
             // RETURNS:

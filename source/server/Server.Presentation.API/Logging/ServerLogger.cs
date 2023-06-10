@@ -23,11 +23,11 @@ namespace Server.Presentation.API.Logging
                 case LogLevel.Error: Console.ForegroundColor = ConsoleColor.Red; break;
                 case LogLevel.Critical: Console.ForegroundColor = ConsoleColor.DarkRed; break;
             }
-            Console.Write($"\x1b[1m[{logLevel.ToString()[0]}]");
-            Console.Write($"[{DateTime.Now.Hour.ToString().PadLeft(2, '0')}:");
-            Console.Write($"{DateTime.Now.Minute.ToString().PadLeft(2, '0')}:");
-            Console.Write($"{DateTime.Now.Second.ToString().PadLeft(2, '0')}]\x1b[0m ");
+            Console.Write($" \x1b[1m{logLevel.ToString().ToUpper()[0..3]}");
             Console.ResetColor();
+            Console.Write($" | {DateTime.Now.Hour.ToString().PadLeft(2, '0')}:");
+            Console.Write($"{DateTime.Now.Minute.ToString().PadLeft(2, '0')}:");
+            Console.Write($"{DateTime.Now.Second.ToString().PadLeft(2, '0')}\x1b[0m | ");
             Console.WriteLine($"{formatter(state, exception)}");
         }
     }

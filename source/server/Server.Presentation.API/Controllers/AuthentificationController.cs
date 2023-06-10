@@ -30,8 +30,6 @@ namespace Server.Presentation.API.Controllers
             // * 502 BAD GATEWAY: server request error
             // * 500 INTERNAL SERVER ERROR: unhadled server error
 
-            logger.Log(LogLevel.Information, $"{Request.Path.Value} called from {Request.HttpContext.Connection.RemoteIpAddress}");
-
             return await Task.Run(() => Ok(request));
         }
 
@@ -48,8 +46,6 @@ namespace Server.Presentation.API.Controllers
             // * 404 NOT FOUND: invalid request data
             // * 502 BAD GATEWAY: server request error
             // * 500 INTERNAL SERVER ERROR: unhadled server error
-
-            logger.Log(LogLevel.Information, $"{Request.Path.Value} called from {Request.HttpContext.Connection.RemoteIpAddress}");
 
             return await Task.Run(() => Ok(request));
         }

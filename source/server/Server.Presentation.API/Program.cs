@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Server.Presentation.API.Logging;
+using Server.Core.Application;
+using Server.Core.Infrastructure;
 
 namespace Server.Application.API
 {
@@ -9,16 +11,17 @@ namespace Server.Application.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.Configure<MvcOptions>(
-                options =>
-                {
-                    options.Filters.Add(new RequireHttpsAttribute());
-                });
+            builder.Services.Configure<MvcOptions>(options => options.Filters.Add(new RequireHttpsAttribute()));
+            builder.Services.AddApplication().AddInfrastructure();
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddLogging(logger => logger.ClearProviders());
-            builder.Services.AddLogging(logger => logger.AddProvider(new ServerLoggerProvider()));
+            builder.Services.AddLogging(
+                logger =>
+                {
+                    logger.ClearProviders();
+                    logger.AddProvider(new ServerLoggerProvider());
+                });
 
             var app = builder.Build();
 

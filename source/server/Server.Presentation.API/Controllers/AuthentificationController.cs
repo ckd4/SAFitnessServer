@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.HttpOverrides;
 using Server.Presentation.Contracts.Authentification;
 
 namespace Server.Presentation.API.Controllers

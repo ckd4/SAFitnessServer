@@ -6,7 +6,7 @@ namespace Server.Presentation.API.Controllers
 {
     [ApiController]
     [Route("api/auth")]
-    public class AuthentificationController : Controller
+    public sealed class AuthentificationController : Controller
     {
         private readonly ILogger<AuthentificationController> logger;
 

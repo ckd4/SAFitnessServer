@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
+using Server.Presentation.API.Logging;
 
 namespace Server.Application.API
 {
-    public class Program
+    public sealed class Program
     {
         public static void Main(string[] args)
         {
@@ -17,6 +18,7 @@ namespace Server.Application.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddLogging(logger => logger.ClearProviders());
+            builder.Services.AddLogging(logger => logger.AddProvider(new ServerLoggerProvider()));
 
             var app = builder.Build();
 

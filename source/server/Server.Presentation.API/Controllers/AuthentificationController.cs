@@ -3,6 +3,7 @@ using Server.Presentation.Contracts.Authentification;
 
 namespace Server.Presentation.API.Controllers
 {
+    [ApiController]
     [Route("api/auth")]
     public class AuthentificationController : Controller
     {
@@ -21,7 +22,7 @@ namespace Server.Presentation.API.Controllers
             // * 502 BAD GATEWAY: server request error
             // * 500 INTERNAL SERVER ERROR: unhadled server error
 
-            return await Task.Run(() => Ok());
+            return await Task.Run(() => Ok(request));
         }
 
         [HttpPost("login")]
@@ -38,7 +39,7 @@ namespace Server.Presentation.API.Controllers
             // * 502 BAD GATEWAY: server request error
             // * 500 INTERNAL SERVER ERROR: unhadled server error
 
-            return await Task.Run(() => Ok());
+            return await Task.Run(() => Ok(request));
         }
     }
 }

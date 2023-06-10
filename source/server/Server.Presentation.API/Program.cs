@@ -16,6 +16,7 @@ namespace Server.Application.API
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddLogging(logger => logger.ClearProviders());
 
             var app = builder.Build();
 

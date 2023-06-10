@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.HttpOverrides;
 using Server.Presentation.Contracts.Authentification;
 
 namespace Server.Presentation.API.Controllers
@@ -7,6 +8,13 @@ namespace Server.Presentation.API.Controllers
     [Route("api/auth")]
     public class AuthentificationController : Controller
     {
+        private readonly ILogger<AuthentificationController> logger;
+
+        public AuthentificationController(ILogger<AuthentificationController> logger)
+        {
+            this.logger = logger;
+        }
+
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegistrationRequest request)
         {
@@ -21,6 +29,8 @@ namespace Server.Presentation.API.Controllers
             // * 409 CONFLICT: there is already user with this data
             // * 502 BAD GATEWAY: server request error
             // * 500 INTERNAL SERVER ERROR: unhadled server error
+
+            logger.Log(LogLevel.Information, $"{Request.Path.Value} called from {Request.HttpContext.Connection.RemoteIpAddress}");
 
             return await Task.Run(() => Ok(request));
         }
@@ -38,6 +48,8 @@ namespace Server.Presentation.API.Controllers
             // * 404 NOT FOUND: invalid request data
             // * 502 BAD GATEWAY: server request error
             // * 500 INTERNAL SERVER ERROR: unhadled server error
+
+            logger.Log(LogLevel.Information, $"{Request.Path.Value} called from {Request.HttpContext.Connection.RemoteIpAddress}");
 
             return await Task.Run(() => Ok(request));
         }

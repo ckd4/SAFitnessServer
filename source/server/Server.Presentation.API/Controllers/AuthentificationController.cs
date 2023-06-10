@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Server.Presentation.Contracts.Authentification;
 
 namespace Server.Presentation.API.Controllers
 {
@@ -6,7 +7,7 @@ namespace Server.Presentation.API.Controllers
     public class AuthentificationController : Controller
     {
         [HttpPost("register")]
-        public async Task<IActionResult> Register()
+        public async Task<IActionResult> Register(RegistrationRequest request)
         {
             // TODO:
             // * implement registration through contracts (idk what arabic people use for auth):
@@ -24,7 +25,7 @@ namespace Server.Presentation.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login()
+        public async Task<IActionResult> Login(LoginRequest request)
         {
             // TODO:
             // * implement login through contracts:

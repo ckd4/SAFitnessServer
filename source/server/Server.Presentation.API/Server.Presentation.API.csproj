@@ -13,7 +13,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Server.Core.Application\Server.Core.Application.csproj" />
     <ProjectReference Include="..\Server.Core.Infrastructure\Server.Core.Infrastructure.csproj" />
-    <ProjectReference Include="..\Server.Presentation.Contracts\Server.Presentation.Contracts.csproj" />
+    <ProjectReference Include="..\Server.Presentation.API.Contracts\Server.Presentation.API.Contracts.csproj" />
+    <ProjectReference Include="..\Server.Service.Logging\Server.Service.Logging.csproj" />
   </ItemGroup>
 
 </Project>

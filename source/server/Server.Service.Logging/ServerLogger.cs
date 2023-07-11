@@ -1,10 +1,11 @@
-﻿using System.Text;
+﻿using Microsoft.Extensions.Logging;
+using System.Text;
 
-namespace Server.Presentation.API.Logging
+namespace Server.Service.Logging
 {
     public sealed class ServerLogger : ILogger
     {
-        public IDisposable BeginScope<TState>(TState state)
+        public IDisposable? BeginScope<TState>(TState state) where TState : notnull
         {
             return null;
         }

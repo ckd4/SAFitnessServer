@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Server.Presentation.API.Logging;
+using Server.Service.Logging;
 using Server.Core.Application;
 using Server.Core.Infrastructure;
 

@@ -1,4 +1,6 @@
-﻿namespace Server.Presentation.API.Logging
+﻿using Microsoft.Extensions.Logging;
+
+namespace Server.Service.Logging
 {
     public sealed class ServerLoggerProvider : ILoggerProvider
     {

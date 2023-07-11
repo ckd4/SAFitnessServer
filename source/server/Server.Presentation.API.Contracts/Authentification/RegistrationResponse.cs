@@ -1,6 +1,6 @@
 ﻿namespace Server.Presentation.Contracts.Authentification
 {
-    public sealed class RegistrationResponse
+    public sealed record RegistrationResponse
     {
         public string Id { get; set; } = null!;
         public string Username { get; set; } = null!;

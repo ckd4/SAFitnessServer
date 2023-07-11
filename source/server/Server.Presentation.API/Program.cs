@@ -10,30 +10,33 @@ namespace Server.Application.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            builder.Services.Configure<MvcOptions>(options => options.Filters.Add(new RequireHttpsAttribute()));
-            builder.Services.AddApplication().AddInfrastructure();
-            builder.Services.AddControllers();
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-            builder.Services.AddLogging(
-                logger =>
-                {
-                    logger.ClearProviders();
-                    logger.AddProvider(new ServerLoggerProvider());
-                });
+            {
+                builder.Services.Configure<MvcOptions>(options => options.Filters.Add(new RequireHttpsAttribute()));
+                builder.Services.AddApplication().AddInfrastructure();
+                builder.Services.AddControllers();
+                builder.Services.AddEndpointsApiExplorer();
+                builder.Services.AddSwaggerGen();
+                builder.Services.AddLogging(
+                    logger =>
+                    {
+                        logger.ClearProviders();
+                        logger.AddProvider(new ServerLoggerProvider());
+                    });
+            }
+            
 
             var app = builder.Build();
-
-            if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+                if (app.Environment.IsDevelopment())
+                {
+                    app.UseSwagger();
+                    app.UseSwaggerUI();
+                }
 
-            app.UseHttpsRedirection();
-            app.MapControllers();
-            app.Run();
+                app.UseHttpsRedirection();
+                app.MapControllers();
+                app.Run();
+            }
         }
     }
 }

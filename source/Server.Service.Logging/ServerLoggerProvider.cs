@@ -1,17 +1,17 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Service.Logging
+namespace Server.Service.Logging
 {
-    public sealed class LoggerProvider : ILoggerProvider
+    public sealed class ServerLoggerProvider : ILoggerProvider
     {
         public ILogger CreateLogger(string categoryName)
         {
-            return new Service.Logging.Logger();
+            return new ServerLogger();
         }
 
         public void Dispose()
         {
-
+            
         }
     }
 }

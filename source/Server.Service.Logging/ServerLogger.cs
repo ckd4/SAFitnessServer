@@ -1,8 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
+using System.Text;
 
-namespace Service.Logging
+namespace Server.Service.Logging
 {
-    public sealed class Logger : ILogger
+    public sealed class ServerLogger : ILogger
     {
         public IDisposable? BeginScope<TState>(TState state) where TState : notnull
         {
@@ -23,7 +24,7 @@ namespace Service.Logging
                 case LogLevel.Error: Console.ForegroundColor = ConsoleColor.Red; break;
                 case LogLevel.Critical: Console.ForegroundColor = ConsoleColor.DarkRed; break;
             }
-            Console.Write($" {logLevel.ToString().ToUpper()[0..3]}");
+            Console.Write($" \x1b[1m{logLevel.ToString().ToUpper()[0..3]}");
             Console.ResetColor();
             Console.Write($" | {DateTime.Now.Hour.ToString().PadLeft(2, '0')}:");
             Console.Write($"{DateTime.Now.Minute.ToString().PadLeft(2, '0')}:");

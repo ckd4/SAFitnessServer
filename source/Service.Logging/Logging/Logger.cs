@@ -1,0 +1,34 @@
+﻿using Microsoft.Extensions.Logging;
+
+namespace Service.Logging
+{
+    public sealed class Logger : ILogger
+    {
+        public IDisposable? BeginScope<TState>(TState state) where TState : notnull
+        {
+            return null;
+        }
+        public bool IsEnabled(LogLevel logLevel)
+        {
+            return true;
+        }
+        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
+        {
+            switch (logLevel)
+            {
+                case LogLevel.Trace: Console.ForegroundColor = ConsoleColor.White; break;
+                case LogLevel.Debug: Console.ForegroundColor = ConsoleColor.Blue; break;
+                case LogLevel.Information: Console.ForegroundColor = ConsoleColor.Green; break;
+                case LogLevel.Warning: Console.ForegroundColor = ConsoleColor.Yellow; break;
+                case LogLevel.Error: Console.ForegroundColor = ConsoleColor.Red; break;
+                case LogLevel.Critical: Console.ForegroundColor = ConsoleColor.DarkRed; break;
+            }
+            Console.Write($" {logLevel.ToString().ToUpper()[0..3]}");
+            Console.ResetColor();
+            Console.Write($" | {DateTime.Now.Hour.ToString().PadLeft(2, '0')}:");
+            Console.Write($"{DateTime.Now.Minute.ToString().PadLeft(2, '0')}:");
+            Console.Write($"{DateTime.Now.Second.ToString().PadLeft(2, '0')}\x1b[0m | ");
+            Console.WriteLine($"{formatter(state, exception)}");
+        }
+    }
+}

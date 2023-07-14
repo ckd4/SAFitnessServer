@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-MessageProcessor-787148c4-7d95-4bd0-aab9-0b21ab78dd27</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Module.Business\Module.Business.csproj" />
+    <ProjectReference Include="..\Module.Streaming\Module.Streaming.csproj" />
+    <ProjectReference Include="..\Service.Logging\Service.Logging.csproj" />
+  </ItemGroup>
+</Project>

@@ -15,7 +15,7 @@ namespace Server.Presentation.API.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(RegistrationRequest request)
+        public async Task<IActionResult> Register([FromBody] RegistrationRequest request)
         {
             // TODO:
             // * implement registration through contracts (idk what arabic people use for auth):
@@ -33,7 +33,7 @@ namespace Server.Presentation.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginRequest request)
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             // TODO:
             // * implement login through contracts:
